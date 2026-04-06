@@ -140,6 +140,8 @@
   --font: 'Inter', -apple-system, sans-serif;
   --mono: 'JetBrains Mono', monospace;
   --serif: 'Fraunces', Georgia, serif;
+  --bone: #F2EBD9;
+  --navy-ink: #0A1628;
 }
 html { scroll-behavior: smooth; }
 body {
@@ -186,7 +188,7 @@ nav.scrolled { padding: 14px 48px; }
 }
 .nav-logo-main {
   font-family: var(--serif);
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 600;
   color: var(--white);
   letter-spacing: -0.02em;
@@ -351,10 +353,13 @@ nav.scrolled { padding: 14px 48px; }
   color: var(--white-65);
 }
 .hero-sub {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--white-40);
-  max-width: 560px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  max-width: 640px;
   line-height: 1.8;
   margin-bottom: 48px;
 }
@@ -409,9 +414,10 @@ nav.scrolled { padding: 14px 48px; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 section { padding: 120px 0; }
 .section-label {
+  font-family: var(--mono);
   font-size: 10px;
-  font-weight: 700;
-  color: var(--azure);
+  font-weight: 500;
+  color: var(--gold);
   letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -467,7 +473,7 @@ section { padding: 120px 0; }
   position: absolute;
   top: 0; left: 0;
   width: 40px; height: 2px;
-  background: linear-gradient(90deg, var(--azure), var(--cyan));
+  background: var(--gold);
   transform: scaleX(1);
   transform-origin: left;
   transition: width 0.4s ease;
@@ -476,7 +482,7 @@ section { padding: 120px 0; }
 .service-num {
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--azure);
+  color: var(--gold);
   margin-bottom: 20px;
 }
 .service-card h3 {
@@ -505,7 +511,7 @@ section { padding: 120px 0; }
   transform: translateY(-50%);
   width: 4px;
   height: 1px;
-  background: var(--azure);
+  background: var(--gold);
 }
 
 /* ==================== WHY SOVEREIGN ==================== */
@@ -789,7 +795,7 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 16px 20px; }
   nav.scrolled { padding: 12px 20px; }
-  .nav-logo-main { font-size: 20px; }
+  .nav-logo-main { font-size: 26px; }
   .nav-logo-cap { font-size: 7px; letter-spacing: 2px; }
   .nav-toggle { display: flex; }
   .nav-links {
@@ -853,7 +859,7 @@ footer {
 @media (max-width: 480px) {
   nav { padding: 14px 16px; }
   nav.scrolled { padding: 10px 16px; }
-  .nav-logo-main { font-size: 17px; }
+  .nav-logo-main { font-size: 22px; }
   .nav-logo-cap { font-size: 6px; letter-spacing: 1.8px; }
   .hero { padding: 88px 16px 56px; }
   .hero-label { font-size: 10px; letter-spacing: 3px; margin-bottom: 24px; }
@@ -902,7 +908,6 @@ footer {
 <!-- NAV -->
 <nav id="mainNav">
   <a href="/" class="nav-logo">
-    <span class="nav-logo-cap">BC CONVEST · BRUSSELS · HAMBURG · AMS</span>
     <span class="nav-logo-main">Sovereign Media</span>
   </a>
   <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -1028,7 +1033,7 @@ footer {
     <div class="contact-grid">
       <div class="contact-info reveal">
         <div class="section-label">Get In Touch</div>
-        <h2>Let's talk about your international media strategy.</h2>
+        <h2>Let's talk institutional. Let's go international.</h2>
         <p>Whether you need programmatic execution across EU and global markets, regulatory guidance for sensitive industries, or a trusted partner for cross-border campaigns -- we're here.</p>
         <address class="contact-detail" style="font-style:normal;">
           Sovereign Media GmbH i.Gr.<br>
@@ -1185,7 +1190,12 @@ for (let i = 0; i < 150; i++) {
   particleContainer.appendChild(p);
 }
 
-// Form submission (Monday.com integration)
+// Form submission — sends in parallel to:
+//   1. FormSubmit.co → email to buelent.cakir@gmail.com (primary)
+//   2. Monday.com board (backup / archive)
+// First-ever submission triggers a one-time activation email from
+// FormSubmit to buelent.cakir@gmail.com — must be confirmed once,
+// then all subsequent leads arrive directly.
 document.getElementById('leadForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
@@ -1195,35 +1205,62 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   const formData = new FormData(this);
   const data = Object.fromEntries(formData);
 
-  try {
-    const res = await fetch('https://api.monday.com/v2', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYzOTY2MTU0MSwiYWFpIjoxMSwidWlkIjoxMDE2MTMzNTMsImlhZCI6IjIwMjYtMDMtMzBUMjA6NDE6MjguNzMyWiIsInBlciI6Im1lOndyaXRlIiwiYWN0aWQiOjM0NDYwMDQ4LCJyZ24iOiJldWMxIn0.ncDU0ZDlIw0MRm86Es5WrJcQFwga8Pz9X_5CQeyt0QU',
-        'API-Version': '2024-10'
-      },
-      body: JSON.stringify({
-        query: 'mutation ($board: ID!, $group: String!, $name: String!, $cols: JSON!) { create_item(board_id: $board, group_id: $group, item_name: $name, column_values: $cols) { id } }',
-        variables: {
-          board: 5093930598,
-          group: 'group_mm1z49t5',
-          name: (data.company || data.name) + ' -- Inquiry',
-          cols: JSON.stringify({
-            "text_mm1zsdrf": data.company || '',
-            "text_mm1z8ree": data.name || '',
-            "email_mm1zp54q": {"email": data.email, "text": data.email},
-            "date_mm1zn4xv": {"date": new Date().toISOString().split('T')[0]},
-            "long_text_mm1z6rtd": {"text": (data.interest ? "Interest: " + data.interest + "\n" : "") + (data.message || "")}
-          })
-        }
-      })
-    });
+  // 1) FormSubmit AJAX → Email to Bulent
+  const emailSend = fetch('https://formsubmit.co/ajax/buelent.cakir@gmail.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      _subject: 'New Lead — ' + (data.company || data.name || 'sovereignmedia.eu'),
+      _template: 'table',
+      _captcha: 'false',
+      Company: data.company || '',
+      Name: data.name || '',
+      Email: data.email || '',
+      Interest: data.interest || '',
+      Message: data.message || '',
+      Source: 'sovereignmedia.eu',
+      Timestamp: new Date().toISOString()
+    })
+  });
+
+  // 2) Monday.com → backup archive
+  const mondaySend = fetch('https://api.monday.com/v2', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYzOTY2MTU0MSwiYWFpIjoxMSwidWlkIjoxMDE2MTMzNTMsImlhZCI6IjIwMjYtMDMtMzBUMjA6NDE6MjguNzMyWiIsInBlciI6Im1lOndyaXRlIiwiYWN0aWQiOjM0NDYwMDQ4LCJyZ24iOiJldWMxIn0.ncDU0ZDlIw0MRm86Es5WrJcQFwga8Pz9X_5CQeyt0QU',
+      'API-Version': '2024-10'
+    },
+    body: JSON.stringify({
+      query: 'mutation ($board: ID!, $group: String!, $name: String!, $cols: JSON!) { create_item(board_id: $board, group_id: $group, item_name: $name, column_values: $cols) { id } }',
+      variables: {
+        board: 5093930598,
+        group: 'group_mm1z49t5',
+        name: (data.company || data.name) + ' -- Inquiry',
+        cols: JSON.stringify({
+          "text_mm1zsdrf": data.company || '',
+          "text_mm1z8ree": data.name || '',
+          "email_mm1zp54q": {"email": data.email, "text": data.email},
+          "date_mm1zn4xv": {"date": new Date().toISOString().split('T')[0]},
+          "long_text_mm1z6rtd": {"text": (data.interest ? "Interest: " + data.interest + "\n" : "") + (data.message || "")}
+        })
+      }
+    })
+  });
+
+  // Run both in parallel — succeed if at least one lands
+  const results = await Promise.allSettled([emailSend, mondaySend]);
+  const ok = results.some(r => r.status === 'fulfilled' && r.value.ok);
+
+  if (ok) {
     btn.textContent = 'Sent Successfully';
     btn.style.background = '#10b981';
     this.reset();
     setTimeout(() => { btn.textContent = 'Send Inquiry →'; btn.style.background = ''; btn.disabled = false; }, 4000);
-  } catch(err) {
+  } else {
     btn.textContent = 'Error -- Try Again';
     btn.style.background = '#ef4444';
     btn.disabled = false;
