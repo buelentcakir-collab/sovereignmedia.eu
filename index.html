@@ -1060,7 +1060,7 @@ for (let i = 0; i < 150; i++) {
   particleContainer.appendChild(p);
 }
 
-// Form submission (Monday.com integration)
+// Form submission → FormSubmit.co relays to buelent.cakir@gmail.com
 document.getElementById('leadForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
@@ -1071,29 +1071,26 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   const data = Object.fromEntries(formData);
 
   try {
-    const res = await fetch('https://api.monday.com/v2', {
+    const res = await fetch('https://formsubmit.co/ajax/buelent.cakir@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYzOTY2MTU0MSwiYWFpIjoxMSwidWlkIjoxMDE2MTMzNTMsImlhZCI6IjIwMjYtMDMtMzBUMjA6NDE6MjguNzMyWiIsInBlciI6Im1lOndyaXRlIiwiYWN0aWQiOjM0NDYwMDQ4LCJyZ24iOiJldWMxIn0.ncDU0ZDlIw0MRm86Es5WrJcQFwga8Pz9X_5CQeyt0QU',
-        'API-Version': '2024-10'
+        'Accept': 'application/json'
       },
       body: JSON.stringify({
-        query: 'mutation ($board: ID!, $group: String!, $name: String!, $cols: JSON!) { create_item(board_id: $board, group_id: $group, item_name: $name, column_values: $cols) { id } }',
-        variables: {
-          board: 5093930598,
-          group: 'group_mm1z49t5',
-          name: (data.company || data.name) + ' -- Inquiry',
-          cols: JSON.stringify({
-            "text_mm1zsdrf": data.company || '',
-            "text_mm1z8ree": data.name || '',
-            "email_mm1zp54q": {"email": data.email, "text": data.email},
-            "date_mm1zn4xv": {"date": new Date().toISOString().split('T')[0]},
-            "long_text_mm1z6rtd": {"text": (data.interest ? "Interest: " + data.interest + "\n" : "") + (data.message || "")}
-          })
-        }
+        _subject: 'New Lead — ' + (data.company || data.name || 'sovereignmedia.eu'),
+        _template: 'table',
+        _captcha: 'false',
+        Company: data.company || '',
+        Name: data.name || '',
+        Email: data.email || '',
+        Interest: data.interest || '',
+        Message: data.message || '',
+        Source: 'sovereignmedia.eu',
+        Timestamp: new Date().toISOString()
       })
     });
+    if (!res.ok) throw new Error('send failed');
     btn.textContent = 'Sent Successfully';
     btn.style.background = '#10b981';
     this.reset();
