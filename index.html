@@ -340,6 +340,33 @@ section { padding: 120px 0; }
 }
 .section-title .muted { color: var(--white-40); font-weight: 300; }
 
+/* ==================== INTRO PILLARS ==================== */
+.intro-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--white-06);
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 880px;
+}
+.intro-block h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--azure);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.intro-block p {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.7;
+  letter-spacing: -0.1px;
+}
+
 /* ==================== SERVICES ==================== */
 .services-grid {
   display: grid;
@@ -634,6 +661,9 @@ footer {
   .container { padding: 0 32px; }
   section { padding: 96px 0; }
   .section-title { font-size: 32px; margin-bottom: 48px; }
+  .intro-section { padding: 72px 0; }
+  .intro-grid { gap: 40px; }
+  .intro-block p { font-size: 16px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid .service-card:last-child { grid-column: 1 / -1; }
   .service-card { padding: 40px 32px; }
@@ -679,6 +709,10 @@ footer {
   .hero-scroll { display: none; }
   .container { padding: 0 24px; }
   section { padding: 72px 0; }
+  .intro-section { padding: 56px 0; }
+  .intro-grid { grid-template-columns: 1fr; gap: 32px; }
+  .intro-block h3 { font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
+  .intro-block p { font-size: 15px; }
   .section-label { font-size: 9px; }
   .section-title { font-size: 24px; margin-bottom: 36px; }
   .services-grid { grid-template-columns: 1fr; }
@@ -808,6 +842,22 @@ footer {
     <div class="line"></div>
   </div>
 </header>
+
+<!-- INTRO PILLARS -->
+<section class="intro-section" aria-label="Practice areas">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-block reveal">
+        <h3>International Brands</h3>
+        <p>International media planned and operated as a discipline. Crossmedia execution across every channel and market, with transparent margins and a single point of accountability.</p>
+      </div>
+      <div class="intro-block reveal reveal-d1">
+        <h3>Specialised Mandates</h3>
+        <p>Custom mandates that don't fit the standard stack &mdash; for when every euro spent has to count. Sovereign data infrastructure, controlled supply paths, reporting built for audit.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services">
