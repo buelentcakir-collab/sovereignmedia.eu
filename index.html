@@ -1,1159 +1,339 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sovereign Media — International Media Advisory for Institutional & Public Clients</title>
-<meta name="description" content="International media advisory, strategy, planning and operations for institutional, public and governmental clients. EU-compliant, 20+ years experience, all markets. Hamburg-based, globally executed.">
-<meta name="keywords" content="Sovereign Media, international media advisory, media strategy, media planning, media operations, EU institutions, government media, programmatic advertising, DOOH, CTV, public sector media, cross-border campaigns">
-<meta name="author" content="Sovereign Media GmbH">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://sovereignmedia.eu/">
-<meta property="og:title" content="Sovereign Media — International Media Advisory">
-<meta property="og:description" content="Strategy, planning and operations for institutional, public and governmental clients across EU and global markets.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sovereignmedia.eu/">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Sovereign Media">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sovereign Media — International Media Advisory">
-<meta name="twitter:description" content="Strategy, planning and operations for institutional, public and governmental clients across EU and global markets.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sovereign Media — Media Advisory, Reach and Solutions</title>
+<meta name="description" content="Media Advisory, Reach and Solutions for brands and operators worldwide. Programmatic, cross-media, multi-market campaign planning and execution.">
+<meta name="theme-color" content="#0B0F17">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='6' fill='%230A1628'/><text x='32' y='38' font-family='Inter' font-weight='900' font-size='16' fill='%232E86DE' text-anchor='middle' letter-spacing='1'>SM</text></svg>">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Sovereign Media GmbH",
-  "url": "https://sovereignmedia.eu",
-  "description": "International media advisory, strategy, planning and operations for institutional, public and governmental clients.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Eggerstedter Weg 18",
-    "addressLocality": "Pinneberg",
-    "postalCode": "25421",
-    "addressCountry": "DE"
-  },
-  "email": "hello@sovereignmedia.eu",
-  "founder": {
-    "@type": "Person",
-    "name": "Bülent Cakir"
-  },
-  "areaServed": "Worldwide",
-  "knowsAbout": ["Media Strategy", "Media Planning", "Media Operations", "Programmatic Advertising", "DOOH", "CTV", "International Campaigns", "EU Institutions"]
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --dark: #060D18;
-  --navy: #0A1628;
-  --azure: #2E86DE;
-  --cyan: #38bdf8;
-  --gold: #C9A84C;
-  --white: #ffffff;
-  --white-65: rgba(255,255,255,0.65);
-  --white-40: rgba(255,255,255,0.40);
-  --white-10: rgba(255,255,255,0.10);
-  --white-06: rgba(255,255,255,0.06);
-  --font: 'Inter', -apple-system, sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-}
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  background: var(--dark);
-  color: var(--white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+/* ============================================================
+   SOVEREIGN MEDIA — Foundations (Brand v2 / Claude Design)
+   Dark-first. Newsreader serif + Geist sans + Geist Mono.
+   Ink navy + Paper off-white + Marine accent.
+============================================================ */
+:root{
+  --ink-1000:#07090E; --ink-900:#0B0F17; --ink-800:#11161F; --ink-700:#1A2030;
+  --paper-50:#F5F2EC; --paper-100:#ECE7DD;
+  --marine:#1F4577; --marine-fg:#4878B0;
+  --cyan:#4FC9D6;
+
+  --bg:var(--ink-900); --bg-deep:var(--ink-1000); --bg-raised:var(--ink-800);
+  --hairline:rgba(245,242,236,0.08); --hairline-strong:rgba(245,242,236,0.16);
+  --grid-line:rgba(245,242,236,0.04);
+
+  --fg:var(--paper-50); --fg-1:var(--paper-50);
+  --fg-2:rgba(245,242,236,0.72); --fg-3:rgba(245,242,236,0.48); --fg-4:rgba(245,242,236,0.28);
+
+  --font-display:'Newsreader','Source Serif 4',Georgia,'Times New Roman',serif;
+  --font-sans:'Geist',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --font-mono:'Geist Mono','SF Mono',Menlo,Consolas,monospace;
+
+  --ease-out:cubic-bezier(0.2,0.6,0.2,1);
+  --dur-fast:140ms; --dur-base:220ms;
+
+  --container:1320px;
 }
 
-/* ==================== NAV ==================== */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 20px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(6,13,24,0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--white-06);
-  transition: padding 0.3s ease;
-}
-nav.scrolled { padding: 14px 48px; }
-.nav-logo {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  gap: 0;
-}
-.nav-logo-main {
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--white);
-  letter-spacing: 4px;
-  line-height: 1.1;
-}
-.nav-logo-sub {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--azure);
-  letter-spacing: 7px;
-  line-height: 1.2;
-}
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--white-65);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-.nav-links a:hover { color: var(--white); }
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans);line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+em,i,cite,dfn,address{font-style:normal}
+::selection{background:var(--marine);color:var(--paper-50)}
 
-/* Mobile nav toggle */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-.nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  transition: all 0.3s ease;
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--fg-3);transition:border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+a:hover{border-bottom-color:var(--cyan);color:var(--cyan)}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;letter-spacing:-0.012em;color:var(--paper-50);text-wrap:balance;margin:0}
+
+/* ===== Header ===== */
+.sm-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(11,15,23,0.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline)}
+.sm-lockup{display:inline-block;border:0;line-height:0}
+.sm-lockup img{display:block;height:32px;width:auto}
+.sm-lockup-footer{font-family:var(--font-display);font-weight:400;font-size:18px;letter-spacing:-0.018em;color:var(--paper-50);border:0;white-space:nowrap}
+.sm-cta-link{font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--paper-50);border-bottom:1px solid var(--fg-3);padding-bottom:2px}
+.sm-cta-link:hover{border-bottom-color:var(--cyan);color:var(--cyan)}
+.sm-cta-link span{margin-left:6px;opacity:0.7}
+@media(max-width:880px){
+  .sm-header{padding:14px 24px}
+  .sm-nav{display:none}
 }
 
-/* ==================== HERO ==================== */
-.hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 120px 80px 80px;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.18;
-  animation: hero-zoom 25s ease-in-out infinite alternate;
-}
-@keyframes hero-zoom {
-  0% { transform: scale(1) translateY(0); }
-  100% { transform: scale(1.12) translateY(-20px); }
-}
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(170deg, rgba(6,13,24,0.92) 0%, rgba(6,13,24,0.6) 40%, rgba(6,13,24,0.95) 100%);
-}
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(46,134,222,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46,134,222,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 10%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 10%, transparent 70%);
-  animation: grid-drift 20s linear infinite;
-}
-@keyframes grid-drift {
-  0% { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
-}
-.hero-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-.particle {
-  position: absolute;
-  color: var(--gold);
-  font-size: 6px;
-  opacity: 0;
-  animation: float-particle linear infinite;
-  line-height: 1;
-}
-@keyframes float-particle {
-  0% { opacity: 0; transform: translateY(100vh) translateX(0) rotate(0deg); }
-  10% { opacity: 0.5; }
-  90% { opacity: 0.5; }
-  100% { opacity: 0; transform: translateY(-10vh) translateX(30px) rotate(180deg); }
-}
-.hero-lines {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-.hero-lines .hline {
-  position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(46,134,222,0.08), transparent);
-  animation: line-sweep 8s ease-in-out infinite;
-}
-.hero-lines .hline:nth-child(1) { width: 60%; top: 25%; left: 0; animation-delay: 0s; }
-.hero-lines .hline:nth-child(2) { width: 40%; top: 55%; right: 0; left: auto; animation-delay: 3s; }
-.hero-lines .hline:nth-child(3) { width: 50%; top: 78%; left: 10%; animation-delay: 5s; }
-@keyframes line-sweep {
-  0%, 100% { opacity: 0; transform: translateX(-100px); }
-  50% { opacity: 1; transform: translateX(0); }
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-}
-.hero-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--azure);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-}
-.hero-label .dot {
-  width: 6px;
-  height: 6px;
-  background: var(--azure);
-  border-radius: 50%;
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-.hero h1 {
-  font-size: clamp(28px, 5vw, 64px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
-}
-.hero h1 .thin {
-  font-weight: 300;
-  color: var(--white-65);
-}
-.hero-sub {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--white-40);
-  max-width: 560px;
-  line-height: 1.8;
-  margin-bottom: 48px;
-}
-.hero-metrics {
-  display: flex;
-  gap: 48px;
-  padding-top: 40px;
-  border-top: 1px solid var(--white-06);
-}
-.hero-metric-num {
-  font-family: var(--mono);
-  font-size: 32px;
-  font-weight: 500;
-  color: var(--white);
-}
-.hero-metric-label {
-  font-size: 10px;
-  color: var(--white-40);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-.hero-scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  z-index: 1;
-}
-.hero-scroll span {
-  font-size: 9px;
-  color: var(--white-40);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.hero-scroll .line {
-  width: 1px;
-  height: 28px;
-  background: linear-gradient(to bottom, var(--azure), transparent);
-  animation: scroll-line 2s ease-in-out infinite;
-}
-@keyframes scroll-line {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-  50% { opacity: 1; transform: scaleY(1); }
+/* ===== Buttons ===== */
+.sm-btn{font-family:var(--font-sans);font-size:14px;font-weight:500;letter-spacing:-0.005em;padding:12px 18px;border-radius:6px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+.sm-btn-primary{background:var(--marine);color:var(--paper-50)}
+.sm-btn-primary:hover{background:#2A558D}
+.sm-btn-secondary{background:transparent;color:var(--paper-50);box-shadow:inset 0 0 0 1px var(--hairline-strong)}
+.sm-btn-secondary:hover{box-shadow:inset 0 0 0 1px var(--paper-50)}
+
+/* ===== Eyebrow ===== */
+.sm-eyebrow{font-family:var(--font-sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-3);font-weight:500;display:inline-flex;align-items:center;gap:10px}
+.sm-tick{display:inline-block;width:8px;height:8px;border-top:1px solid var(--marine-fg);border-left:1px solid var(--marine-fg)}
+.sm-mono{font-family:var(--font-mono);letter-spacing:0.02em}
+.sm-em{color:var(--marine-fg)}
+
+/* ===== Hero ===== */
+.sm-hero{position:relative;padding:120px 80px 100px;max-width:var(--container);margin:0 auto;overflow:hidden}
+.sm-hero-grid{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(to right,rgba(245,242,236,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(245,242,236,0.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,black,transparent 80%);mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,black,transparent 80%)}
+.sm-hero > *{position:relative;z-index:1}
+.sm-hero-display{font-family:var(--font-display);font-weight:300;font-size:clamp(40px,5.5vw,80px);line-height:1.04;letter-spacing:-0.024em;color:var(--paper-50);margin:0 0 48px;max-width:24ch}
+.sm-hero-lede{font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.5;color:var(--fg-2);max-width:56ch;margin:0 0 36px}
+.sm-hero-actions{display:flex;gap:14px;margin-bottom:80px;flex-wrap:wrap}
+.sm-hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;border-top:1px solid var(--hairline);padding-top:24px;max-width:980px}
+.sm-meta-label{font-family:var(--font-sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-3);margin-bottom:6px}
+.sm-meta-value{font-family:var(--font-sans);font-size:15px;color:var(--paper-50)}
+@media(max-width:880px){
+  .sm-hero{padding:80px 24px 64px}
+  .sm-hero-meta{grid-template-columns:repeat(2,1fr);gap:24px}
 }
 
-/* ==================== SECTIONS ==================== */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-section { padding: 120px 0; }
-.section-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--azure);
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.section-title {
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 56px;
-  line-height: 1.2;
-}
-.section-title .muted { color: var(--white-40); font-weight: 300; }
-
-/* ==================== INTRO PILLARS ==================== */
-.intro-section {
-  padding: 96px 0;
-  border-bottom: 1px solid var(--white-06);
-}
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  max-width: 880px;
-}
-.intro-block h3 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--azure);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-.intro-block p {
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.7;
-  letter-spacing: -0.1px;
+/* ===== Intro Pillars ===== */
+.sm-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1080px}
+.sm-intro-title{font-family:var(--font-display);font-weight:400;font-size:28px;line-height:1.2;letter-spacing:-0.012em;color:var(--marine-fg);margin:0 0 16px}
+.sm-intro-text{font-family:var(--font-sans);font-size:17px;line-height:1.6;color:var(--fg-2);margin:0;max-width:44ch}
+@media(max-width:880px){
+  .sm-intro-grid{grid-template-columns:1fr;gap:40px}
+  .sm-intro-title{font-size:24px}
+  .sm-intro-text{font-size:16px}
 }
 
-/* ==================== SERVICES ==================== */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--white-06);
-}
-.service-card {
-  background: var(--dark);
-  padding: 48px 36px;
-  position: relative;
-  transition: all 0.4s ease;
-}
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 2px;
-  background: linear-gradient(90deg, var(--azure), var(--cyan));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-.service-card:hover::before { transform: scaleX(1); }
-.service-card:hover { background: var(--navy); }
-.service-num {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--azure);
-  margin-bottom: 20px;
-}
-.service-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
-}
-.service-card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.service-card li {
-  font-size: 13px;
-  color: var(--white-65);
-  padding-left: 16px;
-  position: relative;
-}
-.service-card li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 1px;
-  background: var(--azure);
+/* ===== Section ===== */
+.sm-section{padding:96px 80px;max-width:var(--container);margin:0 auto;border-top:1px solid var(--hairline)}
+.sm-section-head{margin-bottom:56px;max-width:60ch}
+.sm-section-title{font-family:var(--font-display);font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.1;letter-spacing:-0.018em;color:var(--paper-50);margin:16px 0 0;text-wrap:balance}
+.sm-lede{font-family:var(--font-display);font-size:21px;font-weight:400;line-height:1.55;color:var(--fg-2);max-width:50ch;margin:24px 0 32px}
+@media(max-width:880px){
+  .sm-section{padding:64px 24px}
+  .sm-section-head{margin-bottom:40px}
 }
 
-/* ==================== WHY SOVEREIGN ==================== */
-.why-section {
-  background: var(--navy);
-  padding: 120px 0;
-  position: relative;
-  overflow: hidden;
-}
-.why-section::before {
-  content: 'SM';
-  position: absolute;
-  font-size: 500px;
-  font-weight: 900;
-  color: rgba(255,255,255,0.01);
-  right: -80px;
-  top: 50%;
-  transform: translateY(-50%);
-  letter-spacing: 20px;
-  user-select: none;
-}
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-.why-card {
-  position: relative;
-  padding-left: 20px;
-  border-left: 2px solid var(--white-06);
-  transition: all 0.3s ease;
-}
-.why-card:hover {
-  border-color: var(--azure);
-  background: rgba(46,134,222,0.04);
-  transform: translateX(4px);
-}
-.why-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
-.why-card p {
-  font-size: 13px;
-  color: var(--white-40);
-  line-height: 1.8;
+/* ===== Capabilities ===== */
+.sm-cap-list{list-style:none;margin:0;padding:0}
+.sm-cap-row{padding:32px 0;border-top:1px solid var(--hairline);max-width:60ch}
+.sm-cap-row:last-child{border-bottom:1px solid var(--hairline)}
+.sm-cap-n{font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;color:var(--cyan);padding-top:8px}
+.sm-cap-title{font-family:var(--font-display);font-weight:400;font-size:32px;letter-spacing:-0.012em;line-height:1.15;color:var(--paper-50);margin:0 0 12px}
+.sm-cap-text{font-family:var(--font-sans);font-size:16px;line-height:1.55;color:var(--fg-2);margin:0;max-width:60ch}
+.sm-cap-tags{display:flex;flex-wrap:wrap;gap:8px;padding-top:8px}
+.sm-tag{font-family:var(--font-sans);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;border-radius:2px;box-shadow:inset 0 0 0 1px var(--hairline-strong);color:var(--fg-2)}
+@media(max-width:880px){
 }
 
-/* ==================== TRACK RECORD ==================== */
-.track-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 64px;
-  padding: 48px;
-  background: var(--white-06);
-  border: 1px solid var(--white-06);
-  border-radius: 4px;
-}
-.track-stat { text-align: center; }
-.track-stat-num {
-  font-family: var(--mono);
-  font-size: 42px;
-  font-weight: 500;
-  color: var(--white);
-}
-.track-stat-label {
-  font-size: 10px;
-  color: var(--white-40);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 6px;
-}
-.track-divider {
-  width: 1px;
-  height: 48px;
-  background: var(--white-10);
+/* ===== Engagement / Scope ===== */
+.sm-engagement-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+.sm-scope-table{margin:0;padding:0;border-top:1px solid var(--hairline-strong)}
+.sm-scope-table > div{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--hairline);align-items:baseline}
+.sm-scope-table dt{margin:0;font-family:var(--font-sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-3);font-weight:500}
+.sm-scope-table dd{margin:0;font-family:var(--font-display);font-size:22px;line-height:1.35;color:var(--paper-50);font-weight:400;letter-spacing:-0.005em}
+@media(max-width:880px){
+  .sm-engagement-grid{grid-template-columns:1fr;gap:40px}
+  .sm-scope-table > div{grid-template-columns:1fr;gap:6px}
 }
 
-/* ==================== CHANNELS ==================== */
-.channels-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-.channel-chip {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--white-65);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border: 1px solid var(--white-10);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  cursor: default;
-  opacity: 0;
-  transform: translateY(10px);
-}
-.channel-chip.visible { opacity: 1; transform: translateY(0); }
-.channel-chip:hover {
-  border-color: var(--azure);
-  color: var(--azure);
-  background: rgba(46,134,222,0.06);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(46,134,222,0.1);
+/* ===== Contact ===== */
+.sm-contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px}
+.sm-contact-fields{margin:36px 0 0;padding:0}
+.sm-contact-fields > div{padding:16px 0;border-top:1px solid var(--hairline);display:flex;flex-direction:column;gap:6px}
+.sm-contact-fields dt{margin:0}
+.sm-contact-fields dd{margin:0}
+.sm-form{display:flex;flex-direction:column;gap:20px;padding:32px;background:var(--ink-800);box-shadow:inset 0 0 0 1px var(--hairline);border-radius:4px}
+.sm-field{display:flex;flex-direction:column;gap:6px}
+.sm-field label{font-family:var(--font-sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-3)}
+.sm-field input,.sm-field textarea{font-family:var(--font-sans);font-size:15px;color:var(--paper-50);background:transparent;border:0;border-bottom:1px solid var(--hairline-strong);padding:8px 0;outline:none;transition:border-color var(--dur-fast) var(--ease-out);resize:vertical}
+.sm-field textarea{min-height:80px}
+.sm-field input:focus,.sm-field textarea:focus{border-bottom-color:var(--cyan)}
+.sm-field input::placeholder,.sm-field textarea::placeholder{color:var(--fg-4)}
+.sm-form-foot{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-3);margin-top:4px}
+@media(max-width:880px){
+  .sm-contact-grid{grid-template-columns:1fr;gap:40px}
+  .sm-form{padding:24px}
 }
 
-/* ==================== CONTACT ==================== */
-.contact-section {
-  padding: 120px 0;
-  background: var(--navy);
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.contact-info h2 {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
-}
-.contact-info p {
-  font-size: 14px;
-  color: var(--white-40);
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-.contact-detail {
-  font-size: 13px;
-  color: var(--white-65);
-  line-height: 1.9;
-}
-.form-card {
-  background: var(--white-06);
-  border: 1px solid var(--white-06);
-  border-radius: 4px;
-  padding: 36px;
-}
-.form-card label {
-  display: block;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--white-40);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  margin-top: 16px;
-}
-.form-card label:first-child { margin-top: 0; }
-.form-card input, .form-card select, .form-card textarea {
-  width: 100%;
-  padding: 12px 14px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--white-10);
-  border-radius: 4px;
-  color: var(--white);
-  font-family: var(--font);
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-.form-card input:focus, .form-card select:focus, .form-card textarea:focus {
-  border-color: var(--azure);
-}
-.form-card textarea { min-height: 100px; resize: vertical; }
-.form-card select { appearance: none; cursor: pointer; }
-.form-card select option { background: var(--navy); }
-.form-card button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 14px;
-  background: var(--azure);
-  color: var(--white);
-  border: none;
-  border-radius: 4px;
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.form-card button:hover {
-  background: #1d6fd1;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(46,134,222,0.25);
-}
-
-/* ==================== FOOTER ==================== */
-footer {
-  border-top: 1px solid var(--white-06);
-  padding: 40px 0;
-}
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-left { font-size: 12px; color: var(--white-40); }
-.footer-links { display: flex; gap: 24px; }
-.footer-links a {
-  font-size: 12px;
-  color: var(--white-40);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-links a:hover { color: var(--white); }
-
-/* ==================== REVEAL ==================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-d1 { transition-delay: 0.1s; }
-.reveal-d2 { transition-delay: 0.2s; }
-.reveal-d3 { transition-delay: 0.3s; }
-
-/* ==================== RESPONSIVE ==================== */
-/* Tablet landscape & small desktop */
-@media (max-width: 1024px) {
-  nav { padding: 16px 32px; }
-  nav.scrolled { padding: 12px 32px; }
-  .hero { padding: 110px 48px 80px; }
-  .hero-sub { font-size: 16px; }
-  .container { padding: 0 32px; }
-  section { padding: 96px 0; }
-  .section-title { font-size: 32px; margin-bottom: 48px; }
-  .intro-section { padding: 72px 0; }
-  .intro-grid { gap: 40px; }
-  .intro-block p { font-size: 16px; }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid .service-card:last-child { grid-column: 1 / -1; }
-  .service-card { padding: 40px 32px; }
-  .why-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .contact-grid { gap: 40px; }
-  .track-banner { gap: 40px; padding: 36px; flex-wrap: wrap; }
-  .track-stat-num { font-size: 34px; }
-  .why-section::before { font-size: 360px; right: -60px; }
-}
-
-/* Tablet portrait */
-@media (max-width: 768px) {
-  nav { padding: 16px 20px; }
-  nav.scrolled { padding: 12px 20px; }
-  .nav-logo-main { font-size: 18px; letter-spacing: 3px; }
-  .nav-logo-sub { font-size: 8px; letter-spacing: 5px; }
-  .nav-toggle { display: flex; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(6,13,24,0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 20px;
-    gap: 16px;
-    border-bottom: 1px solid var(--white-06);
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a { font-size: 14px; }
-  .hero {
-    padding: 96px 24px 64px;
-    min-height: auto;
-  }
-  .hero h1 { font-size: 28px; word-break: break-word; hyphens: auto; }
-  .hero-sub { font-size: 14px; margin-bottom: 32px; }
-  .hero-metrics { flex-wrap: wrap; gap: 24px; padding-top: 32px; }
-  .hero-metric-num { font-size: 26px; }
-  .hero-metric-label { font-size: 9px; }
-  .hero-scroll { display: none; }
-  .container { padding: 0 24px; }
-  section { padding: 72px 0; }
-  .intro-section { padding: 56px 0; }
-  .intro-grid { grid-template-columns: 1fr; gap: 32px; }
-  .intro-block h3 { font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
-  .intro-block p { font-size: 15px; }
-  .section-label { font-size: 9px; }
-  .section-title { font-size: 24px; margin-bottom: 36px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .services-grid .service-card:last-child { grid-column: auto; }
-  .service-card { padding: 32px 24px; }
-  .service-card h3 { font-size: 18px; }
-  .service-card li { font-size: 12px; }
-  .channel-chip { font-size: 10px; padding: 8px 16px; }
-  .why-section { padding: 72px 0; }
-  .why-section::before { font-size: 240px; right: -40px; letter-spacing: 12px; }
-  .why-grid { grid-template-columns: 1fr; gap: 24px; }
-  .why-card { padding: 16px 16px 16px 20px; }
-  .why-card h3 { font-size: 15px; }
-  .why-card p { font-size: 12px; }
-  .track-banner { flex-direction: column; gap: 24px; padding: 32px 24px; }
-  .track-stat-num { font-size: 32px; }
-  .track-divider { width: 48px; height: 1px; }
-  .contact-section { padding: 72px 0; }
-  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-  .contact-info h2 { font-size: 22px; }
-  .contact-info p { font-size: 13px; margin-bottom: 20px; }
-  .form-card { padding: 24px; }
-  .form-card input, .form-card select, .form-card textarea { font-size: 16px; }
-  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
-  .footer-left { font-size: 11px; }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  nav { padding: 14px 16px; }
-  nav.scrolled { padding: 10px 16px; }
-  .nav-logo-main { font-size: 16px; letter-spacing: 2px; }
-  .nav-logo-sub { font-size: 7px; letter-spacing: 4px; }
-  .hero { padding: 88px 16px 56px; }
-  .hero-label { font-size: 10px; letter-spacing: 3px; margin-bottom: 24px; }
-  .hero h1 { font-size: 26px; letter-spacing: -0.5px; line-height: 1.15; }
-  .hero-sub { font-size: 13px; margin-bottom: 28px; }
-  .hero-metrics { gap: 20px; padding-top: 24px; }
-  .hero-metric-num { font-size: 22px; }
-  .container { padding: 0 16px; }
-  section { padding: 56px 0; }
-  .section-title { font-size: 22px; margin-bottom: 28px; }
-  .service-card { padding: 28px 22px; }
-  .service-card h3 { font-size: 17px; }
-  .service-card li { font-size: 12px; }
-  .channel-chip { font-size: 9px; padding: 6px 12px; letter-spacing: 0.5px; }
-  .why-section { padding: 56px 0; }
-  .why-section::before { font-size: 180px; }
-  .contact-section { padding: 56px 0; }
-  .contact-info h2 { font-size: 20px; }
-  .form-card { padding: 20px; }
-  .track-banner { padding: 24px 16px; gap: 20px; }
-  .track-stat-num { font-size: 28px; }
-}
-
-/* Very small phones */
-@media (max-width: 360px) {
-  .hero h1 { font-size: 22px; }
-  .hero-metrics { gap: 16px; }
-  .hero-metric-num { font-size: 20px; }
-  .section-title { font-size: 20px; }
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .hero-bg img { animation: none; }
+/* ===== Footer ===== */
+.sm-footer{border-top:1px solid var(--hairline);padding:28px 80px 36px;max-width:var(--container);margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.sm-footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.sm-footer-fine{padding-top:14px;border-top:1px solid var(--hairline)}
+.sm-footer-fine > *{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-3)}
+.sm-footer-fine a{border:0;color:var(--fg-3)}
+.sm-footer-fine a:hover{color:var(--paper-50)}
+.sm-footer-meta{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-3)}
+@media(max-width:880px){
+  .sm-footer{padding:24px 24px 32px}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a href="/" class="nav-logo">
-    <span class="nav-logo-main">SOVEREIGN</span>
-    <span class="nav-logo-sub">MEDIA</span>
+<!-- ===== HEADER ===== -->
+<header class="sm-header">
+  <a href="#" class="sm-lockup" aria-label="Sovereign Media — home">
+    <img src="/assets/logo-wordmark.png" alt="Sovereign Media">
   </a>
-  <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="#services" onclick="document.querySelector('.nav-links').classList.remove('open')">Services</a></li>
-    <li><a href="#why" onclick="document.querySelector('.nav-links').classList.remove('open')">Why Us</a></li>
-    <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header class="hero" id="heroSection">
-  <div class="hero-bg">
-    <img src="https://sovereignmedia.eu/images/institutional-parliament-1.png" alt="European institutional building" loading="eager">
-  </div>
-  <div class="hero-grid"></div>
-  <div class="hero-particles" id="heroParticles"></div>
-  <div class="hero-lines">
-    <div class="hline"></div>
-    <div class="hline"></div>
-    <div class="hline"></div>
-  </div>
-  <div class="hero-content">
-    <h1 class="reveal">International media advisory, reach and solutions <span class="thin">for institutional, public and governmental clients.</span></h1>
-    <p class="hero-sub reveal">Strategy, planning and operations across EU and global markets.</p>
-    <div class="hero-metrics reveal">
-      <div>
-        <div class="hero-metric-num">&gt;50</div>
-        <div class="hero-metric-label">Public Campaigns</div>
-      </div>
-      <div>
-        <div class="hero-metric-num">ALL</div>
-        <div class="hero-metric-label">Markets</div>
-      </div>
-      <div>
-        <div class="hero-metric-num">20+</div>
-        <div class="hero-metric-label">Years Experience</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="line"></div>
-  </div>
+  <a href="#contact" class="sm-cta-link">Get in touch <span aria-hidden="true">→</span></a>
 </header>
 
-<!-- INTRO PILLARS -->
-<section class="intro-section" aria-label="Practice areas">
-  <div class="container">
-    <div class="intro-grid">
-      <div class="intro-block reveal">
-        <h3>International Brands</h3>
-        <p>International media planned and operated as a discipline. Crossmedia execution across every channel and market, with transparent margins and a single point of accountability.</p>
-      </div>
-      <div class="intro-block reveal reveal-d1">
-        <h3>Specialised Mandates</h3>
-        <p>Custom mandates that don't fit the standard stack &mdash; for when every euro spent has to count. Sovereign data infrastructure, controlled supply paths, reporting built for audit.</p>
-      </div>
+<!-- ===== HERO ===== -->
+<section class="sm-hero">
+  <div class="sm-hero-grid" aria-hidden="true"></div>
+
+  <h1 class="sm-hero-display">
+    Media advisory and execution for <span class="sm-em">international</span> brands and <span class="sm-em">specialised</span> mandates across European and global markets.
+  </h1>
+
+  <div class="sm-hero-actions">
+    <a href="#contact" class="sm-btn sm-btn-primary">Get in touch <span aria-hidden="true">→</span></a>
+    <a href="#approach" class="sm-btn sm-btn-secondary">Approach</a>
+  </div>
+</section>
+
+<!-- ===== INTRO PILLARS ===== -->
+<section class="sm-section" id="intro" aria-label="Practice areas">
+  <div class="sm-intro-grid">
+    <div class="sm-intro-block">
+      <h2 class="sm-intro-title">International Brands</h2>
+      <p class="sm-intro-text">International media planned and operated as a discipline. Crossmedia execution across every channel and market, with transparent margins and a single point of accountability.</p>
+    </div>
+    <div class="sm-intro-block">
+      <h2 class="sm-intro-title">Specialised Mandates</h2>
+      <p class="sm-intro-text">Custom mandates that don&rsquo;t fit the standard stack &mdash; for when every euro spent has to count. Sovereign data infrastructure, controlled supply paths, reporting built for audit.</p>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="section-label reveal">What We Do</div>
-    <h2 class="section-title reveal">20 Years Experience. <span class="muted">Global Reach. EU Compliant.</span></h2>
-    <div class="services-grid">
-      <article class="service-card reveal reveal-d1">
-        <div class="service-num">01</div>
-        <h3>Media Strategy</h3>
-        <ul>
-          <li>Media Audit & Spend Analysis</li>
-          <li>Market Monitoring & Intelligence</li>
-          <li>Audience Analysis & Segmentation</li>
-          <li>Campaign Strategy & Positioning</li>
-        </ul>
-      </article>
-      <article class="service-card reveal reveal-d2">
-        <div class="service-num">02</div>
-        <h3>Media Planning</h3>
-        <ul>
-          <li>Cross-Media Planning across EU & Global Markets</li>
-          <li>Multi-Market Channel Allocation</li>
-          <li>Regulatory & Compliance Advisory</li>
-          <li>Budget Optimization & Forecasting</li>
-        </ul>
-      </article>
-      <article class="service-card reveal reveal-d3">
-        <div class="service-num">03</div>
-        <h3>Media Operations</h3>
-        <ul>
-          <li>Online & Programmatic Execution</li>
-          <li>DOOH, CTV, Audio & Social</li>
-          <li>Real-Time Reporting & Optimization</li>
-          <li>Self-Service Enablement</li>
-        </ul>
-      </article>
+<!-- ===== CAPABILITIES ===== -->
+<section class="sm-section" id="capabilities">
+  <div class="sm-section-head">
+    <h2 class="sm-section-title">
+      Four capabilities. <span style="color:var(--fg-2)">End-to-end, in-house.</span>
+    </h2>
+  </div>
+
+  <ol class="sm-cap-list">
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title">Media <span class="sm-em">Strategy</span></h3>
+        <p class="sm-cap-text">Audit and spend analysis, market intelligence, audience analysis and segmentation, campaign positioning across regions and channels.</p>
+      </div>    </li>
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title">Media <span class="sm-em">Planning</span></h3>
+        <p class="sm-cap-text">Cross-media planning across global markets. Multi-market channel allocation, cross-border reach and frequency modeling, budget optimization and forecasting.</p>
+      </div>    </li>
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title">Media <span class="sm-em">Operations</span></h3>
+        <p class="sm-cap-text">Online and programmatic execution. DOOH, CTV, audio and social. Real-time reporting and optimization, self-service enablement for in-house teams.</p>
+      </div>    </li>
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title">Media <span class="sm-em">Solutions</span></h3>
+        <p class="sm-cap-text">Bespoke programs for briefs where the off-the-shelf stack doesn&rsquo;t apply. Custom delivery infrastructure, discrete reporting paths, end-to-end documentation — built per engagement.</p>
+      </div>    </li>
+  </ol>
+</section>
+
+<!-- ===== APPROACH ===== -->
+<section class="sm-section" id="approach">
+  <div class="sm-section-head">
+    <h2 class="sm-section-title">
+      Automation beats <span style="color:var(--fg-2)">organization.</span>
+    </h2>
+    <p class="sm-lede">
+      Three things separate independent operators from holding agencies: technical depth, operational efficiency, and verifiable delivery.
+    </p>
+  </div>
+
+  <ol class="sm-cap-list">
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title"><span class="sm-em">Technical</span> depth</h3>
+        <p class="sm-cap-text">Industry-standard platforms where they fit. Custom buying and optimization where they don&rsquo;t.</p>
+      </div>    </li>
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title"><span class="sm-em">Operational</span> efficiency</h3>
+        <p class="sm-cap-text">Senior operators, automated workflows, trusted partner network.</p>
+      </div>    </li>
+    <li class="sm-cap-row">      <div>
+        <h3 class="sm-cap-title"><span class="sm-em">Verifiable</span> delivery</h3>
+        <p class="sm-cap-text">Contractual and trust relationships across the value chain. Documented end-to-end.</p>
+      </div>    </li>
+  </ol>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sm-section" id="contact">
+  <div class="sm-contact-grid">
+    <div>
+      <h2 class="sm-section-title">
+        Reach our global team <span style="color:var(--fg-2)">directly.</span>
+      </h2>
+      <p class="sm-lede">
+        Briefings are by introduction or referral, with NDA at intake. We respond within one business day — usually the same day.
+      </p>
     </div>
-    <div class="channels-row reveal">
-      <span class="channel-chip">Online</span>
-      <span class="channel-chip">Display</span>
-      <span class="channel-chip">Video</span>
-      <span class="channel-chip">Native</span>
-      <span class="channel-chip">DOOH</span>
-      <span class="channel-chip">CTV</span>
-      <span class="channel-chip">Audio</span>
-      <span class="channel-chip">Social</span>
-      <span class="channel-chip">Rich Media</span>
-      <span class="channel-chip">Search</span>
-    </div>
+
+    <form class="sm-form" id="leadForm">
+      <div class="sm-field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" required>
+      </div>
+      <div class="sm-field">
+        <label for="f-org">Organisation</label>
+        <input id="f-org" name="company" type="text" placeholder="Brand or agency">
+      </div>
+      <div class="sm-field">
+        <label for="f-mail">Mail</label>
+        <input id="f-mail" name="email" type="email" required>
+      </div>
+      <div class="sm-field">
+        <label for="f-note">Note</label>
+        <textarea id="f-note" name="message" placeholder="One sentence is enough."></textarea>
+      </div>
+      <button type="submit" id="submitBtn" class="sm-btn sm-btn-primary">
+        Send to our team <span aria-hidden="true">→</span>
+      </button>
+      <div class="sm-form-foot">
+        Subject to NDA at intake. No marketing list.
+      </div>
+    </form>
   </div>
 </section>
 
-<!-- WHY SOVEREIGN -->
-<section class="why-section" id="why" aria-label="Why Sovereign Media">
-  <div class="container">
-    <div class="section-label reveal">Why Sovereign</div>
-    <h2 class="section-title reveal">Built for institutions.</h2>
-    <div class="why-grid">
-      <article class="why-card reveal reveal-d1">
-        <h3>Institutional Clients Only</h3>
-        <p>Governments, EU institutions, public bodies, regulatory agencies. We understand that every euro we spend is a public euro. Our processes, compliance layers and reporting standards are built to ensure full accountability and responsible use of public funds.</p>
-      </article>
-      <article class="why-card reveal reveal-d2">
-        <h3>Institutional Expertise</h3>
-        <p>Procurement cycles, framework contracts, regulatory clearance, political sensitivity. We've run campaigns where a single misplaced ad placement makes national news. We know what's at stake.</p>
-      </article>
-      <article class="why-card reveal reveal-d3">
-        <h3>Centrally Planned, Globally Executed</h3>
-        <p>One team plans your campaign across every market, channel and language. No local agencies, no handoffs, no lost-in-translation. From EU to Asia to the Americas -- one strategy, one dashboard, one invoice.</p>
-      </article>
-    </div>
+<!-- ===== FOOTER ===== -->
+<footer class="sm-footer">
+  <div class="sm-footer-row">
+    <div class="sm-lockup-footer">Sovereign Media</div>
   </div>
-</section>
-
-<!-- TRACK RECORD -->
-<section aria-label="Track record">
-  <div class="container">
-    <div class="section-label reveal">Track Record</div>
-    <h2 class="section-title reveal">Numbers that matter.</h2>
-    <div class="track-banner reveal">
-      <div class="track-stat">
-        <div class="track-stat-num">&gt;50</div>
-        <div class="track-stat-label">Public Campaigns</div>
-      </div>
-      <div class="track-divider"></div>
-      <div class="track-stat">
-        <div class="track-stat-num">27+</div>
-        <div class="track-stat-label">Countries</div>
-      </div>
-      <div class="track-divider"></div>
-      <div class="track-stat">
-        <div class="track-stat-num">20+</div>
-        <div class="track-stat-label">Years</div>
-      </div>
-      <div class="track-divider"></div>
-      <div class="track-stat">
-        <div class="track-stat-num">ALL</div>
-        <div class="track-stat-label">Channels</div>
-      </div>
-    </div>
-    <div class="channels-row reveal" style="margin-top:48px">
-      <span class="channel-chip">Online</span>
-      <span class="channel-chip">Display</span>
-      <span class="channel-chip">Video</span>
-      <span class="channel-chip">Native</span>
-      <span class="channel-chip">DOOH</span>
-      <span class="channel-chip">CTV</span>
-      <span class="channel-chip">Audio</span>
-      <span class="channel-chip">Social</span>
-      <span class="channel-chip">Rich Media</span>
-      <span class="channel-chip">Search</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact" aria-label="Contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="section-label">Get In Touch</div>
-        <h2>Let's talk about your international media strategy.</h2>
-        <p>Whether you need programmatic execution across EU and global markets, regulatory guidance for sensitive industries, or a trusted partner for cross-border campaigns -- we're here.</p>
-        <address class="contact-detail" style="font-style:normal;">
-          Sovereign Media GmbH<br>
-          Eggerstedter Weg 18, 25421 Pinneberg<br>
-          Germany<br><br>
-          <a href="mailto:hello@sovereignmedia.eu" style="color: var(--azure); text-decoration: none;">hello@sovereignmedia.eu</a>
-        </address>
-      </div>
-      <div class="form-card reveal">
-        <form id="leadForm">
-          <label for="sm-name">Name</label>
-          <input type="text" id="sm-name" name="name" placeholder="Your name" required>
-          <label for="sm-company">Organisation</label>
-          <input type="text" id="sm-company" name="company" placeholder="Your organisation">
-          <label for="sm-email">Email</label>
-          <input type="email" id="sm-email" name="email" placeholder="you@organisation.eu" required>
-          <label for="sm-interest">Interest</label>
-          <select id="sm-interest" name="interest">
-            <option value="">Select a service</option>
-            <option value="Media Strategy">Media Strategy</option>
-            <option value="Media Planning">Media Planning</option>
-            <option value="Media Operations">Media Operations</option>
-            <option value="General Inquiry">General Inquiry</option>
-          </select>
-          <label for="sm-message">Message</label>
-          <textarea id="sm-message" name="message" placeholder="Tell us about your project..."></textarea>
-          <button type="submit" id="submitBtn">Send Inquiry</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <strong>SOVEREIGN MEDIA GmbH</strong><br>
-        Eggerstedter Weg 18, 25421 Pinneberg, Germany<br>
-        HRB 19610 PI &middot; AG Pinneberg &middot; USt-ID DE269567376
-      </div>
-      <div class="footer-links">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </div>
-    </div>
+  <div class="sm-footer-row sm-footer-fine">
+    <span>© 2026 Sovereign Media GmbH</span>
+    <span>HRB 19710 PI · Steuernummer 18/296/55852</span>
+    <a href="/impressum.html">Imprint</a>
+    <a href="/datenschutz.html">Privacy</a>
   </div>
 </footer>
 
 <script>
-// Nav shrink on scroll
-const nav = document.getElementById('mainNav');
-let ticking = false;
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      const hero = document.querySelector('.hero-bg img');
-      if (hero && window.scrollY < window.innerHeight) {
-        hero.style.transform = 'scale(' + (1 + window.scrollY * 0.0003) + ') translateY(' + (window.scrollY * 0.15) + 'px)';
-      }
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Channel chips staggered entrance
-document.querySelectorAll('.channels-row').forEach(row => {
-  const chipObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const chips = e.target.querySelectorAll('.channel-chip');
-        chips.forEach((chip, i) => {
-          setTimeout(() => chip.classList.add('visible'), i * 80);
-        });
-        chipObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  chipObs.observe(row);
-});
-
-// Service cards tilt (desktop only)
-if (window.matchMedia('(hover: hover)').matches) {
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = 'perspective(600px) rotateX(' + (y * -4) + 'deg) rotateY(' + (x * 4) + 'deg)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(600px) rotateX(0) rotateY(0)';
-    });
-  });
-}
-
-// Mouse-follow glow on hero
-const heroSection = document.getElementById('heroSection');
-const glow = document.createElement('div');
-glow.style.cssText = 'position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(46,134,222,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;transition:transform 0.3s ease;';
-heroSection.appendChild(glow);
-heroSection.addEventListener('mousemove', (e) => {
-  const rect = heroSection.getBoundingClientRect();
-  glow.style.transform = 'translate(' + (e.clientX - rect.left - 200) + 'px, ' + (e.clientY - rect.top - 200) + 'px)';
-});
-
-// Generate floating particles
-const particleContainer = document.getElementById('heroParticles');
-for (let i = 0; i < 150; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  p.textContent = '\u2605';
-  p.style.left = Math.random() * 100 + '%';
-  const dur = 10 + Math.random() * 15;
-  p.style.animationDuration = dur + 's';
-  p.style.animationDelay = (-Math.random() * dur) + 's';
-  p.style.fontSize = (3 + Math.random() * 5) + 'px';
-  particleContainer.appendChild(p);
-}
-
-// Form submission (Monday.com integration)
-document.getElementById('leadForm').addEventListener('submit', async function(e) {
+// Form → opens user's mail client with prefilled draft to bc@sovereignmedia.eu
+document.getElementById('leadForm').addEventListener('submit', function(e){
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
+  const data = Object.fromEntries(new FormData(this));
 
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData);
+  const subject = ['Sovereign Media inquiry', data.company].filter(Boolean).join(' · ');
+  const body = [
+    data.name && 'Name: ' + data.name,
+    data.company && 'Organisation: ' + data.company,
+    data.email && 'Mail: ' + data.email,
+    '',
+    data.message || ''
+  ].filter(Boolean).join('\n');
 
-  try {
-    const res = await fetch('https://api.monday.com/v2', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYzOTY2MTU0MSwiYWFpIjoxMSwidWlkIjoxMDE2MTMzNTMsImlhZCI6IjIwMjYtMDMtMzBUMjA6NDE6MjguNzMyWiIsInBlciI6Im1lOndyaXRlIiwiYWN0aWQiOjM0NDYwMDQ4LCJyZ24iOiJldWMxIn0.ncDU0ZDlIw0MRm86Es5WrJcQFwga8Pz9X_5CQeyt0QU',
-        'API-Version': '2024-10'
-      },
-      body: JSON.stringify({
-        query: 'mutation ($board: ID!, $group: String!, $name: String!, $cols: JSON!) { create_item(board_id: $board, group_id: $group, item_name: $name, column_values: $cols) { id } }',
-        variables: {
-          board: 5093930598,
-          group: 'group_mm1z49t5',
-          name: (data.company || data.name) + ' -- Inquiry',
-          cols: JSON.stringify({
-            "text_mm1zsdrf": data.company || '',
-            "text_mm1z8ree": data.name || '',
-            "email_mm1zp54q": {"email": data.email, "text": data.email},
-            "date_mm1zn4xv": {"date": new Date().toISOString().split('T')[0]},
-            "long_text_mm1z6rtd": {"text": (data.interest ? "Interest: " + data.interest + "\n" : "") + (data.message || "")}
-          })
-        }
-      })
-    });
-    btn.textContent = 'Sent Successfully';
-    btn.style.background = '#10b981';
-    this.reset();
-    setTimeout(() => { btn.textContent = 'Send Inquiry'; btn.style.background = ''; btn.disabled = false; }, 4000);
-  } catch(err) {
-    btn.textContent = 'Error -- Try Again';
-    btn.style.background = '#ef4444';
-    btn.disabled = false;
-    setTimeout(() => { btn.textContent = 'Send Inquiry'; btn.style.background = ''; }, 3000);
-  }
+  window.location.href = 'mailto:bc@sovereignmedia.eu'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+
+  btn.textContent = 'Opening your mail app…';
 });
 </script>
 
